@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item elemento1">
+        <p>sdas</p>
+        <p>asdasd</p>
+      </div>
+      <div class="grid-item anidamiento">
+        <div>testing</div>
+        <div>testing</div>
+        <div>testing</div>
+        <div>testing</div>
+      </div>
+      <div class="grid-item">kkk</div>
+
+      <div class="grid-item">uri nostrum!</div>
+      <div class="grid-item">
+        Maxime molestiae aspernatur vero? Dignissimos error dolore alias
+        voluptas laboriosam eius eum maxime animi, voluptatem, distinctio a
+        enim, aut voluptates.
+      </div>
+      <div class="grid-item">
+        Iure in veritatis molestias quis totam error cupiditate fuga labore?
+        Animi deleniti, in modi debitis maiores quia maxime voluptatem ducimus.
+      </div>
+    </div>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .grid-container {
+        display: grid;
+
+        /* define el tamaño de las columnas, cada valor es una columna | repeat() es como una funcion y recibe cuantas veces se repite */
+        grid-template-columns: repeat(3, 1fr);
+
+        /* define el alto de las filas 1 y fila 2 | minmax(valor valor) define un valor minimo y un valor maximo de la fila1 */
+        /* grid-template-rows: minmax(100px, auto); */
+
+        /* define el alto de todas las filas */
+        grid-auto-rows: minmax(300px, auto);
+
+        /* define el espaciado entre filas y columnas | column-gap solo el espaciado entre las columnas | row gap entre las filas*/
+        gap: 10px;
+        /* column-gap: 10px; */
+        /* row-gap: 10px; */
+
+        background-color: #2196f3;
+
+        /* Para alinear varios elementos de una fila o columna (por ejemplo al grid-container y todos los elementos van a tener esos alineamientos) */
+        /* - justify-items: center; | Alinea cada elemento horizontalmente */
+        /* - align-items: center; | Alinea cada elemento verticalmente  */
+        justify-items: stretch;
+        align-items: stretch;
+      }
+
+      .anidamiento {
+        display: grid;
+
+        /* define el tamaño de las columnas, cada valor es una columna | repeat() es como una funcion y recibe cuantas veces se repite */
+        grid-template-columns: repeat(2, 1fr);
+
+        /* define el alto de todas las filas */
+        grid-auto-rows: 50px;
+
+        gap: 10px;
+      }
+
+      /* a los div dentro de anidamiento dales estos estilos */
+      .anidamiento > div {
+        border: 1px solid black;
+        background: yellow;
+        padding: 1px;
+      }
+
+      .elemento1 {
+        /* Para alinear solo un elemento de una fila (solo un elemento que tenga la clase elemento1) */
+        /* - justify-self: center; | alinea solo el elemento horizontalmente */
+        /* - align-self: center; | alinea solo el elemento verticalmente */
+        align-self: stretch;
+        justify-self: stretch;
+
+        /* En cada columna y cada fila se les llama linea y tienen el proposito de definir el ancho de un elemento (se aplican a solo a elementos) */
+        /* - grid-column: 1/4; | Este elemento va a abarcar desde la linea 1 hasta la 4 todas las columnas (abarca horizontalmente) */
+        /* - grid-row: 1/3; | Este elemento va a abarcar desde la linea 1 hasta la linea 3 una fila mas (abarca verticalmente) */
+        grid-column: 1/4;
+        grid-row: 1/3;
+      }
+
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 10px;
+      }
+    </style>
+  </body>
+</html>

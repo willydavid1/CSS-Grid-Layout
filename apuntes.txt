@@ -1,0 +1,52 @@
+CSS Grid Layout:
+
+Se aplican al grid-container:
+- grid-template-columns: 50% 50%; | define el tamaño de las columnas, cada valor es una columna
+- grid-template-rows: 100px 400px; | define el alto de las filas 1 y fila 2
+- gap: 10px; | define el espaciado entre filas y columnas 
+- column-gap: 10px; | define el espaciado entre las columnas
+- row-gap: 10px; | define el espaciado entre las filas
+- grid-auto-rows: 100px; | define el alto de todas las filas
+
+- Una fraccion define la division de las columnas en partes para que abarque el 100% | basado en fracciones ( 1fr )
+- repeat() | es como una funcion y recibe cuantas veces se repite y lo que va a repetir se usa muy seguido con grid-template-columns: repeat(6, 1fr) ;
+- minmax(100px, auto) | define un valor minimo y un valor maximo se usa muy seguido con grid-template-rows: minmax(100px auto); para definir el valor minimo y maximo de las filas 
+
+
+----------------------- Anidaciones -----------------------------
+
+
+vamos a anidar unas grillas dentro de un item le añadimos al contenedor la clase anidamiento
+1- defino el tamaño de las columnas con grid-template-columns: repeat(3, 1fr) ;
+2- defino el alto de todas las filas | grid-auto-rows: 100px;
+3- le añado el un espaciado entre columnas y filas con gap: 1em;
+
+
+--------------------------  Alineamientos -------------------------------
+
+Para alinear varios elementos de una fila o columna (por ejemplo al grid-container y todos los elementos van a tener esos alineamientos)
+- justify-items: center; | Alinea cada elemento horizontalmente
+- align-items: center; | Alinea cada elemento verticalmente
+
+Para alinear solo un elemento de una fila (solo un elemento que tenga la clase elemento1)
+- justify-self: center; | alinea solo el elemento horizontalmente
+- align-self: center; | alinea solo el elemento verticalmente
+
+
+----------------------- Lineas ---------------------
+En cada columna y cada fila se les llama linea y tienen el proposito de definir el ancho de un elemento (se aplican a solo a elementos)
+
+(Se aplican solo a elementos particulares) 
+- grid-column: 1/4; | Este elemento va a abarcar desde la linea 1 hasta la 4 todas las columnas (abarca horizontalmente)
+- grid-row: 1/3; | Este elemento va a abarcar desde la linea 1 hasta la linea 3 una fila mas (abarca verticalmente)
+
+https://www.w3schools.com/css/css_grid.asp
+
+
+Ejemplo de una fila que tiene 3 columnas para que abarque las 3 columnas ese elemento (abarca todo horizontalmente)
+.elemento1 {
+    grid-column: 1/4;
+}
+
+
+
